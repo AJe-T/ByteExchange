@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
         />
 
         <p className="h2-bold font-spaceGrotesk text-dark-100 dark:text-light-900 max-sm:hidden">
-          Byte <span className="text-primary-500">Exchange</span>
+          Byte<span className="text-primary-500">Exchange</span>
         </p>
       </Link>
 

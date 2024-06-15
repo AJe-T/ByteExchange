@@ -4,7 +4,7 @@ import React from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-import { SignedOut } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignOutButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { sidebarLinks } from "@/constants";
 import { usePathname } from "next/navigation";
@@ -31,7 +31,7 @@ const NavContent = () => {
                   height={20}
                   className={`${isActive ? "" : "invert-colors"}`}
                 />
-                {/* <p className={`${isActive ? "base-bold" : "base-medium"}`}> */}
+
                 <p
                   className={`hidden  lg:block ${isActive ? "base-bold" : "base-medium"}`}
                 >
@@ -86,6 +86,23 @@ const LeftSideBar = () => {
           </div>
         </div>
       </SignedOut>
+      <SignedIn>
+        <SignOutButton>
+          <Link
+            href=""
+            className="text-dark300_light900  flex-start hover:btn-secondary hover:light-border-2 w-full gap-4 rounded-lg bg-transparent p-4 py-3 shadow-none hover:min-h-[41px]"
+          >
+            <Image
+              src={"/assets/icons/logout.svg"}
+              alt={"logout"}
+              width={20}
+              height={20}
+              className={`dark:invert`}
+            />
+            <span className="  sm:hidden md:hidden lg:block">Sign out</span>
+          </Link>
+        </SignOutButton>
+      </SignedIn>
     </div>
   );
 };
